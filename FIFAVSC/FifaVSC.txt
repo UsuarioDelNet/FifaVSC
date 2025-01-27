@@ -1,0 +1,198 @@
+#include <iostream>
+#include <windows.h>
+#include <math.h>
+#include <cmath>
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <fstream>
+#include <cstdlib>
+#include <random>
+using namespace std;
+
+class StoryText {
+    public: 
+        int randBaseWeapon;
+        int roomCreator;
+        string weaponNames[4][3]; //Info: 1 = Weapon Name 2 = Basic Attack Name 3 = Skill Name
+        int Weapon[4][5]; //Stats: 1 = Phys. Damage 2 = Mag. Damage 3 = Ranged Damage 4 = Skill Damage 5 = Weapon Type (1 = Melee, 2 = Magic, 3 = Ranged)
+        bool newEquip;
+        int equippedWeapon[1][5];
+        string equippedWeaponName[1][3];
+        int roomSaved[5][1]; //Random Rooms: 1 = Monster Room 2 = Treasure Room 3 = Heal Room 4 = Lore Room 5 = Boss Room 
+    StoryText(){
+        srand (time(NULL));
+        randBaseWeapon = (rand() % 4) + 1;
+        roomCreator = (rand() % 10) + 1;        
+        weaponNames[0][0] = "Cracked Sword";
+        weaponNames[0][1] = "Slash";
+        weaponNames[0][2] = "Cleave";
+        weaponNames[1][0] = "Old Bow";
+        weaponNames[1][1] = "Arrow";
+        weaponNames[1][2] = "Double Shot";
+        weaponNames[2][0] = "Wooden Wand";
+        weaponNames[2][1] = "Magic Bullet";
+        weaponNames[2][2] = "Magic Blast";
+        weaponNames[3][0] = "Worn Spear";
+        weaponNames[3][1] = "Stab";
+        weaponNames[3][2] = "Thrust";
+        Weapon[0][0] = 3;
+        Weapon[0][1] = 0;
+        Weapon[0][2] = 0;
+        Weapon[0][3] = 5;
+        Weapon[0][4] = 1;
+        Weapon[1][0] = 0;
+        Weapon[1][1] = 2;
+        Weapon[1][2] = 0;
+        Weapon[1][3] = (rand() % 3) * 3;
+        Weapon[1][4] = 2;
+        Weapon[2][0] = 0;
+        Weapon[2][1] = 0;
+        Weapon[2][2] = 3;
+        Weapon[2][3] = 2 + 3;
+        Weapon[2][4] = 3;
+        Weapon[3][0] = 2;
+        Weapon[3][1] = 0;
+        Weapon[3][2] = 1;
+        Weapon[3][3] = ((rand() % 2)+1) * 3;
+        Weapon[3][4] = 1;
+    }
+
+    int startScreen(){
+        int path;
+        cout << "___________________________________________________________________________" << endl;
+        cout << "With a jolt you awaken, in a forest not familiar to you in the slightest." << endl;
+        cout << "Thunder crashes as before you, a castle stands." << endl;
+        cout << "The winds howl as you enter the wooden door, but little do you know this land is" << endl;
+        cout << "SQUARE ZERO: THE LEGACY OF SQUAARON" << endl;
+        cout << "___________________________________________________________________________" << endl;
+        cout << "Before you lie three paths:" << endl;
+        cout << "1) A descending staircase covered in moss that leads to the dungeons." << endl;
+        cout << "2) A tapestry-covered path that leads to the lord's quarters." << endl;
+        cout << "3) A winding stone staircase that lead to the top of the castle." << endl;
+        cout << "Which one will you traverse through? ";
+        cin >> path;
+        return path;
+    }
+
+    void dungeon(){
+        cout << "___________________________________________________________________________" << endl;
+        cout << "You descend the staircase, hearing the rattling of chains somewhere below." << endl;
+
+    }
+
+    void quarters(){
+        cout << "___________________________________________________________________________" << endl;
+        cout << "You travel down the path, the torches on the walls flickering ominously." << endl;
+
+    }
+
+    void minaret(){
+        cout << "___________________________________________________________________________" << endl;
+        cout << "You ascend the staircase, the flap of wings booming in the distance." << endl;
+
+    }
+
+    void firstChest(){
+        cout << "All of a sudden, you come across a worn wooden chest." << endl;
+        cout << "The iron lock is rusted, and easily breaks into pieces." << endl;
+        startingWeapon();
+    }
+
+    bool equipWeapon(int x){
+        int query;
+        bool returner;
+        cout << "___________________________________________________________________________" << endl;
+        cout << "1) Equip the " << weaponNames[x-1][0] << "." << endl;
+        cout << "2) Inspect the stats of the " << weaponNames[x-1][0] << "." << endl;
+        cout << "3) Discard the " << weaponNames[x-1][0] << "." << endl;
+        cin >> query;
+        switch (query){
+            case 1:
+                cout << weaponNames[x-1][0] << " equipped." << endl;
+                returner = true;
+                break;
+            case 2:
+                weaponInspect(x);
+                int queryception;
+                cout << "Would you like to equip (1) or discard (2) the " << weaponNames[x-1][0] << "?" << endl;
+                cin >> queryception;
+                switch (queryception){
+                    case 1:
+                        cout << weaponNames[x-1][0] << " equipped." << endl;
+                        returner = true;
+                        break;
+                    case 2:
+                        cout << weaponNames[x-1][0] << " discarded." << endl;
+                        returner = false;
+                        break;
+                }
+                break;
+            case 3:
+            cout << weaponNames[x-1][0] << " discarded." << endl;
+            returner = false;
+            break;
+        }
+        
+    return returner;
+    }
+
+    void weaponInspect(int x){
+        int type = Weapon[x-1][4];
+        cout << "___________________________________________________________________________" << endl;
+        cout << weaponNames[x-1][0] << ":" << endl;
+        cout << "Basic attack: " << weaponNames[x-1][1] << endl;
+        cout << "Basic attack damage: " << Weapon[x-1][0] + Weapon[x-1][1] + Weapon[x-1][2] << endl;
+        cout << "Skill: " << weaponNames[x-1][2] << endl;
+        cout << "Skill damage: " << Weapon[x-1][3] << endl;
+        switch(type){
+            case 1:
+                cout << "Weapon type: Melee" << endl;
+                break;
+            case 2:
+                cout << "Weapon type: Ranged" << endl;
+                break;
+            case 3:
+                cout << "Weapon type: Magic" << endl;
+                break;
+        }
+        
+
+    }
+
+    void startingWeapon(){
+        cout << "Within the chest is the " << weaponNames[randBaseWeapon-1][0] << "." << endl;
+        int number = randBaseWeapon;
+        newEquip = equipWeapon(number);
+        if (newEquip == true){
+            equippedWeapon[0][0] = Weapon[randBaseWeapon-1][0];
+            equippedWeapon[0][1] = Weapon[randBaseWeapon-1][1];
+            equippedWeapon[0][2] = Weapon[randBaseWeapon-1][1];
+            equippedWeapon[0][3] = Weapon[randBaseWeapon-1][1];
+            equippedWeapon[0][4] = Weapon[randBaseWeapon-1][1];
+            equippedWeaponName[0][0] = weaponNames[randBaseWeapon-1][0];
+            equippedWeaponName[0][1] = weaponNames[randBaseWeapon-1][1];
+            equippedWeaponName[0][2] = weaponNames[randBaseWeapon-1][1];
+        }
+    }
+
+};
+
+
+int main(){
+    int firstPath;
+    StoryText storyMode;
+    firstPath = storyMode.startScreen();
+    switch (firstPath){
+        case 1:
+            storyMode.dungeon();
+            break;
+        case 2:
+            storyMode.quarters();
+            break;
+        case 3:
+            storyMode.minaret();
+            break;
+    }
+    storyMode.firstChest();
+}
