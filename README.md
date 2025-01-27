@@ -1,7 +1,7 @@
 # FIFA VS Code Draw Project
 
 ### What does it do?
-This is a FIFA Card Puller, designed in the same way that the card packs are in the hit game EA FC (and the lesser acclaimed EA FC Mobile). <br />
+This is a FIFA Card Puller, designed to mimic the card packs in the hit game EA FC (and the lesser acclaimed EA FC Mobile). <br />
 By **NO** means is this a finished product. At the very least I have many more cards and players to add, and I will also eventually do a complete overhaul of the interface and the draw animation.<br />
 But for right now, please enjoy drawing your favorite footballers from the different packs!
 
