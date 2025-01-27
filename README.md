@@ -41,4 +41,4 @@ But for right now, please enjoy drawing your favorite footballers from the diffe
 
 ### Updates in the works
 - Updated player rosters in all the packs
-- New packs! Keep an eye out for the Spanish Legends and Serie A Standouts Packs coming soon!
+- New packs! Keep an eye out for the **Spanish Legends** and **Serie A Standouts** Packs coming soon!
