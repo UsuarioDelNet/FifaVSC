@@ -15,7 +15,10 @@ But for right now, please enjoy drawing your favorite footballers from the diffe
 - `Benzema` Karim Benzema (90 OVR)
 - `Rodri` Rodrigo Hernandez Cascante (89 OVR)
 #### Icon Packs
-- `Pele` Edson Arantes do Nascimento 
+- `Pele` Edson Arantes do Nascimento (91 OVR)
+- `Zidane` Zinedine Zidane (91 OVR)
+- `Best` George Best (88 OVR)
+- `Eusebio` Eusébio da Silva Ferreira (89 OVR)
 #### MLS Legends Packs
 #### 2024 Euros Team of the Tournament Packs
 
