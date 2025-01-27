@@ -26,7 +26,7 @@ But for right now, please enjoy drawing your favorite footballers from the diffe
 - `Sergio Busquets` Sergio Busquets Burgos (97 OVR)
 - `Ibrahimovic` Zlatan Ibrahimović (95 OVR)
 - `Donovan` Landon Timothy Donovan (86 OVR)
-#### 2024 Euros Team of the Tournament Packs
+#### 2024 Euros Team of the Tournament Packs [Completed]
 - `Mamardashvili` Giorgi Mamardashvili (95 OVR)
 - `Cucurella` Marc Cucurella Saseta (97 OVR)
 - `Laporte` Aymeric Jean Louis Gérard Alphonse Laporte Fevre (95 OVR)
@@ -40,3 +40,5 @@ But for right now, please enjoy drawing your favorite footballers from the diffe
 - `Lamine Yamal` Lamine Yamal Nasraoui Ebana (98 OVR)
 
 ### Updates in the works
+- Updated player rosters in all the packs
+- New packs! Keep an eye out for the Spanish Legends and Serie A Standouts Packs coming soon!
